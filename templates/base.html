@@ -15,8 +15,9 @@
     <meta name="author" content="Mojarung, Inc">
 
     {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/nullstyle.scss' %}">
         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}">
-        {% block extra_styles %}{% endblock %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'core/css/style.scss' %}">
     {% endcompress %}
 
 </head>
