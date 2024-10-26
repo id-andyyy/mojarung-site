@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'core.apps.CoreConfig'
 ]
 
@@ -70,6 +71,16 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+
+COMPRESS_PRECOMPILERS = [
+    ('text/x-scss', 'django_libsass.SassCompiler'),
 ]
 
 WSGI_APPLICATION = 'mojarungsite.wsgi.application'
@@ -117,6 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / 'static'
+
+SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

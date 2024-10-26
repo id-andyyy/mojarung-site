@@ -1,3 +1,6 @@
+{% load static %}
+{% load compress %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +10,15 @@
     <title>{{ title }}</title>
     <meta name="description"
           content="Мы — команда разработчиков веб, мобильных и десктоп приложений. Создаем инновационный язык программирования Mojarung на основе концепции Envelope и метода Flapback. Наша цель — внести вклад в IT-индустрию и сделать наш язык доступным для всех!">
-    <meta name="keywords" content="mojarung, сайт, визитка, новости, it, технологии, программирование, язык программирования, envelope, flapback, энвелоуп, флэпбэк">
+    <meta name="keywords"
+          content="mojarung, сайт, визитка, новости, it, технологии, программирование, язык программирования, envelope, flapback, энвелоуп, флэпбэк">
     <meta name="author" content="Mojarung, Inc">
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}">
+        {% block extra_styles %}{% endblock %}
+    {% endcompress %}
+
 </head>
 <body>
 {% block content %}
