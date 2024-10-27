@@ -1,5 +1,5 @@
 {% load static %}
-{% load compress %}
+{% load sass_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,7 @@
     <meta name="keywords"
           content="mojarung, сайт, визитка, новости, it, технологии, программирование, язык программирования, envelope, flapback, энвелоуп, флэпбэк">
     <meta name="author" content="Mojarung, Inc">
-
-    {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/nullstyle.scss' %}">
-    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
-    <link rel="stylesheet" type="text/x-scss" href="{% static 'core/css/style.scss' %}">
-    {% endcompress %}
-
+    <link href="{% sass_src 'core/css/style.scss' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 {% block content %}

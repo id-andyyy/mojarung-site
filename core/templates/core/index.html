@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
     <h1>{{ title }}</h1>
+    <img src="{% static 'core/img/test.png' %}" alt="test">
 {% endblock %}
