@@ -22,3 +22,6 @@ urlpatterns = [
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('core.urls')),
 ]
+
+admin.site.site_header = 'Панель администрирования'
+admin.site.index_title = 'Сайт команды Mojarung'
