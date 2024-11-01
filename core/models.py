@@ -5,6 +5,7 @@ class Member(models.Model):
     name = models.CharField(max_length=50, verbose_name='имя')
     surname = models.CharField(max_length=50, verbose_name='фамилия')
     bio = models.TextField(blank=True, verbose_name='био')
+    photo = models.ImageField(upload_to='photos/members/', default=None, blank=True, null=True, verbose_name='фото')
     role = models.ForeignKey('Role', on_delete=models.PROTECT, related_name='members', verbose_name='роль')
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='время создания')
 
